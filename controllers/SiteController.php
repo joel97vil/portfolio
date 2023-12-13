@@ -69,7 +69,7 @@ class SiteController extends Controller
      * @return string
      */
     public function actionHome(){
-        return $this->renderPartial('home');
+        return $this->render('home');
     }
 
     /**
@@ -85,8 +85,5 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
-        return $this->renderPartial('contact', [
-            'model' => $model,
-        ]);
     }
 }
