@@ -7,7 +7,8 @@ $(window).on("load", function() {
         $("#cursor").before(String.fromCharCode(e.which));
         window.setTimeout(redirect, 2000);
     });
-    //window.setTimeout(redirect, 10000);
+    
+    //TODO: Veure com capturar events de pantalla de mòbil
 
     //Every second lapsed, update the countdown on the screen. If the seconds arrive to 0, redirect to home
     var x = setInterval(function() {

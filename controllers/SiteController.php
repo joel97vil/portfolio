@@ -69,7 +69,7 @@ class SiteController extends Controller
      * @return string
      */
     public function actionHome(){
-        //return $this->renderPartial('index');
+        return $this->renderPartial('home');
     }
 
     /**
