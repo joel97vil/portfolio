@@ -7,6 +7,7 @@
 
 namespace app\assets;
 
+use Yii;
 use yii\web\AssetBundle;
 
 /**
@@ -20,10 +21,10 @@ class LandingAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/landing.css',
+        'css/landing.css?v=1'//.Yii::$app->params['jsVersion']
     ];
     public $js = [
-        'js/landing.js',
+        'js/landing.js?v=1'//.Yii::$app->params['jsVersion']
     ];
     public $depends = [
         'yii\web\YiiAsset',

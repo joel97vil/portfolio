@@ -7,6 +7,7 @@
 
 namespace app\assets;
 
+use Yii;
 use yii\web\AssetBundle;
 
 /**
@@ -20,10 +21,10 @@ class HomeAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/styles.css',
+        'css/styles.css?v=1'//.Yii::$app->params['jsVersion'],
     ];
     public $js = [
-        'js/app.js'
+        'js/app.js?v=1'//.Yii::$app->params['jsVersion']
     ];
     public $depends = [
         'yii\web\YiiAsset',

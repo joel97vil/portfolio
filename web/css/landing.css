@@ -12,3 +12,11 @@ div.prompt-background {
   height: 100%;
   background-color: black;
 }
+
+.underlineable {
+  text-decoration: none;
+}
+
+.underlineable:hover {
+  text-decoration: underline;
+}

@@ -20,7 +20,7 @@ LandingAsset::register($this);
             <div class="container bg-dark">
                 <div class="row">
                     <div class="col-12">
-                        <p class="text-light">You are now entering on <span class="text-danger"><b>Joel's portfolio. </b></span> Please, press any key to continue (or wait <span id="seconds">10</span> seconds) ... <span id="cursor" class="blinker">|</span></p>
+                        <p class="text-light"><?= Yii::t('app', 'You are now entering on'); ?> <span class="text-danger underlineable"><b><?= Yii::t("app", "Joel's portfolio.");?> </b></span> <?= Yii::t("app", "Please, press any key to continue (or wait"); ?> <span id="seconds">10</span> <?= Yii::t("app", "seconds"); ?>) ... <span id="cursor" class="blinker">|</span></p>
                     </div>
                 </div>
             </div>

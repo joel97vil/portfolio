@@ -29,9 +29,6 @@ function redirect(){
 
 //Update count logic
 function updateCount(){
-    var txt = $("#seconds").text();
-    var value = parseInt(txt);
-    value--;
-    seconds = value;
-    $("#seconds").text(value);
+    seconds--;
+    $("#seconds").text(seconds);
 }

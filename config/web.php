@@ -4,7 +4,10 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'Joel Faura M.',
+    'id' => 'joel-faura-m',
+    'name' => 'Joel Faura M.',
+    'language' => 'ca-ES',
+    'sourceLanguage' => 'en-US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -48,6 +51,17 @@ $config = [
             'rules' => [
                 '' => 'site/index',
                 '<action>'=>'site/<action>',
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/translations',
+                    'fileMap' => [
+                        'app' => 'app.php'
+                    ],
+                ],
             ],
         ],
     ],
