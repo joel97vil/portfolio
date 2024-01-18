@@ -32,57 +32,47 @@ HomeAsset::register($this);
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, libero?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
             </p>
-            <div class="btn-con">
-                <a href="" class="main-btn">
-                    <span class="btn-text"><?= Yii::t('app','Download CV'); ?></span>
-                    <span class="btn-icon"><i class="fas fa-download"></i></span>
-                </a>
-            </div>
+            <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
         </div>
     </div>
 </header>
 <main>
     <section class="container about" id="about">
         <div class="main-title">
-            <h2>About <span>me</span><span class="bg-text">About me</span></h2>
+            <h2><?= Yii::t('app','About');?> <span><?= Yii::t('app','me');?></span><span class="bg-text"><?= Yii::t('app','About me');?></span></h2>
         </div>
         <div class="about-container">
             <div class="left-about">
-                <h4>Information About me</h4>
+                <h4><?= Yii::t('app','Information about me');?></h4>
                 <p>
                     <?= Yii::t('app',"I've been developer since I was 11 years old, but I didn't knew that"); ?>
                     <?= Yii::t('app',"I started programming at 11 because I was a big fan of RuneScape, a MMO-RPG. I wanted to investigate how the game could be built. And I starting my research of how to do it I found the RuneScape private servers world, which is a RS replica with Java Code..."); ?>
                 </p>
-                <div class="btn-con">
-                    <a href="#" class="main-btn">
-                        <span class="btn-text"><?= Yii::t('app','Download CV'); ?></span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
+                <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
             </div>
             <div class="right-about">
                 <div class="about-item">
                     <div class="abt-text">
                         <p class="large-text">5+</p>
-                        <p class="small-text">Years of <br /> professional developer experience</p>
+                        <p class="small-text"><?= Yii::t('app','Years of');?> <br /> <?= Yii::t('app','professional developer experience');?></p>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="abt-text">
                         <p class="large-text">8+</p>
-                        <p class="small-text">Years of <br /> student developer experience</p>
+                        <p class="small-text"><?= Yii::t('app','Years of');?> <br /> <?= Yii::t('app','student developer experience'); ?></p>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="abt-text">
                         <p class="large-text">6+</p>
-                        <p class="small-text">Professional projects <br /> worked in</p>
+                        <p class="small-text"><?= Yii::t('app','Professional projects');?> <br /> <?= Yii::t('app','worked in');?></p>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="abt-text">
                         <p class="large-text">5+</p>
-                        <p class="small-text">Personal projects <br /> worked in</p>
+                        <p class="small-text"><?= Yii::t('app','Personal projects');?> <br /> <?= Yii::t('app','worked in');?></p>
                     </div>
                 </div>
             </div>
@@ -94,7 +84,7 @@ HomeAsset::register($this);
                     <i class="fas fa-briefcase"></i>
                 </div>
                 <p class="tl-duration">2021 - present</p>
-                <h5>Fullstack Developer<span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
+                <h5><?= Yii::t('app','Fullstack developer');?><span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
                 </p>
@@ -104,7 +94,7 @@ HomeAsset::register($this);
                     <i class="fas fa-briefcase"></i>
                 </div>
                 <p class="tl-duration">2019 - 2021</p>
-                <h5>Web App Developer<span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
+                <h5><?= Yii::t('app','Web applications developer');?><span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
                 </p>
@@ -154,11 +144,11 @@ HomeAsset::register($this);
 
     <section class="container skills" id="skills">
         <div class="main-title">
-            <h2>My <span>Programming skills</span><span class="bg-text">Programming</span></h2>
+            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Programming skills');?></span><span class="bg-text"><?= Yii::t('app','Programming');?></span></h2>
         </div>
         <div class="skills-container">
             <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
+                <h4 class="stat-title"><?= Yii::t('app','My Skills');?></h4>
                 <div class="progress-bars">
                     <div class="progress-bar">
                         <p class="prog-title">html5</p>
@@ -229,10 +219,10 @@ HomeAsset::register($this);
     </section>
     <section class="container" id="portfolio">
         <div class="main-title">
-            <h2>My <span>Projects</span><span class="bg-text">Projects</span></h2>
+            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','personal projects');?></span><span class="bg-text"><?= Yii::t('app','Projects');?></span></h2>
         </div>
         <p class="port-text">
-            Here is some of my work that I've done in various programming languages.
+        <?= Yii::t('app',"Here is some of my work that I've done in various programming languages.");?>
         </p>
         <div class="portfolios">
             <div class="portfolio-item">
@@ -242,7 +232,7 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>Where do I sleep? (WDIS)</h3>
                     <div class="icons">
-                        <a href="#" class="icon">
+                        <a href="https://github.com/joel97vil/wdis" class="icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
@@ -259,9 +249,9 @@ HomeAsset::register($this);
                     <img src="img/port2.jpg" alt="">
                 </div>
                 <div class="hover-items">
-                    <h3>Portfolio (this website)</h3>
+                    <h3><?= Yii::t('app','Portfolio (this website)');?></h3>
                     <div class="icons">
-                        <a href="#" class="icon">
+                        <a href="https://github.com/joel97vil/portfolio" class="icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
@@ -280,7 +270,7 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>Elvarg</h3>
                     <div class="icons">
-                        <a href="#" class="icon">
+                        <a href="https://github.com/joel97vil/Elvarg" class="icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
@@ -299,7 +289,7 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>XAMPP Web Initializer</h3>
                     <div class="icons">
-                        <a href="#" class="icon">
+                        <a href="https://github.com/joel97vil/xampp-web-initializer" class="icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
@@ -318,7 +308,7 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>JS Loading Spinner</h3>
                     <div class="icons">
-                        <a href="#" class="icon">
+                        <a href="https://github.com/joel97vil/html-loading-spinner" class="icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
@@ -335,7 +325,7 @@ HomeAsset::register($this);
     <section class="container" id="blogs">
         <div class="blogs-content">
             <div class="main-title">
-                <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
+                <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Blogs');?></span><span class="bg-text"><?= Yii::t('app','Blogs');?></span></h2>
             </div>
             <div class="blogs">
                 <!-- TODO: Here goes a foreach to iterate over blogs -->
@@ -361,7 +351,7 @@ HomeAsset::register($this);
             </div>
             <div class="contact-content-con">
                 <div class="left-contact">
-                    <h4>Contact me here</h4>
+                    <h4><?= Yii::t('app','Contact me here');?></h4>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         In, laborum numquam? Quam excepturi perspiciatis quas quasi.
@@ -373,7 +363,7 @@ HomeAsset::register($this);
                                 <span>Location</span>
                             </div>
                             <p>
-                                : Vilalba dels Arcs, Tarragona, Spain
+                                : <?= Yii::t('app','Vilalba dels Arcs, Tarragona, Spain'); ?>
                             </p>
                         </div>
                         <div class="contact-item">
@@ -382,34 +372,34 @@ HomeAsset::register($this);
                                 <span>Email</span>
                             </div>
                             <p>
-                                <span>: joel97vil@gmail.com</span>
+                                <span>: <a href="mailto:joel97vil@gmail.com" target="_blank">joel97vil@gmail.com</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-user-graduate"></i>
-                                <span>Education</span>
+                                <span><?= Yii::t('app','Education');?></span>
                             </div>
                             <p>
-                                <span>: Institut Obert de Catalunya (IOC)</span>
+                                <span>: <a href="https://ioc.xtec.cat/" target="_blank">Institut Obert de Catalunya (IOC)</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-user-graduate"></i>
-                                <span>Mobile Number</span>
+                                <span><?= Yii::t('app','Mobile Number'); ?></span>
                             </div>
                             <p>
-                                <span>: +34 681 29 49 19</span>
+                                <span>: <a href="tel:+34681294919" target="_blank">+34 681 29 49 19</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-globe-africa"></i>
-                                <span>Languages</span>
+                                <span><?= Yii::t('app','Languages');?></span>
                             </div>
                             <p>
-                                <span>: English, Spanish, Catalan</span>
+                                <span>: <?= Yii::t('app','English, Spanish, Catalan');?></span>
                             </p>
                         </div>
                     </div>
@@ -430,21 +420,16 @@ HomeAsset::register($this);
                 <div class="right-contact">
                     <form action="" class="contact-form">
                         <div class="input-control i-c-2">
-                            <input type="text" required placeholder="YOUR NAME">
-                            <input type="email" required placeholder="YOUR EMAIL">
+                            <input type="text" required placeholder="<?= Yii::t('app','YOUR NAME'); ?>">
+                            <input type="email" required placeholder="<?= Yii::t('app','YOUR EMAIL'); ?>">
                         </div>
                         <div class="input-control">
-                            <input type="text" required placeholder="ENTER SUBJECT">
+                            <input type="text" required placeholder="<?= Yii::t('app','ENTER SUBJECT'); ?>">
                         </div>
                         <div class="input-control">
-                            <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                            <textarea name="" id="" cols="15" rows="8" placeholder="<?= Yii::t('app','Your message here...'); ?>"></textarea>
                         </div>
-                        <div class="submit-btn">
-                            <a href="#" class="main-btn">
-                                <span class="btn-text"><?= Yii::t('app','Download CV'); ?></span>
-                                <span class="btn-icon"><i class="fas fa-download"></i></span>
-                            </a>
-                        </div>
+                        <?= Yii::$app->view->renderFile('@app/views/components/_download_button_submit.php'); ?>
                     </form>
                 </div>
             </div>

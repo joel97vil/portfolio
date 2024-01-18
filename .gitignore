@@ -35,5 +35,8 @@ tests/_support/_generated
 #vagrant folder
 /.vagrant
 
-#template folder
+# Template folder
 /template
+
+# Any photoshop project file
+*.psd
