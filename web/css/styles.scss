@@ -7,7 +7,8 @@
 
 :root {
     --color-primary: #191d2b;
-    --color-secondary: #27AE60;
+    --color-secondary: #ae8427;
+    --color-terciary: #cfa240;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -23,7 +24,8 @@
 
 .light-mode {
     --color-primary: #FFFFFF;
-    --color-secondary: #F56692;
+    --color-secondary: #203864;
+    --color-terciary: #4062a1;
     --color-white: #454e56;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -112,6 +114,11 @@ section {
             color: var(--color-grey-2);
             pointer-events: none;
         }
+        &:hover {
+            background-color: var(--color-terciary);
+            i { color: var(--color-white); }
+            //TODO: Effects to see the name of the menu part
+        }
     }
     .active-btn {
         background-color: var(--color-secondary);
@@ -134,7 +141,11 @@ section {
     align-items: center;
     box-shadow: 0 3px 15px rgba(0,0,0,.3);
     transition: all .1s ease-in-out;
-    &:active{ transform: translateY(-3px); }
+    &:active { transform: translateY(-3px); }
+    &:hover {
+        background-color: var(--color-terciary);
+        i { color: var(--color-white); }
+    }
     i{
         font-size: 1.4rem;
         color: var(--color-grey-2);
@@ -298,12 +309,14 @@ section {
                         transition: all .4s ease-in-out;
                         width: 60%;
                     }
-                    .html { width: 80%; }
-                    .css { width: 95%; }
-                    .js { width: 75%; }
-                    .react{ width: 60%; }
-                    .node{ width: 87%; }
-                    .python{ width: 70%; }
+                    .ninety-five-percent { width: 95%; }
+                    .ninety-percent { width: 90%; }
+                    .eighty-percent { width: 80%; }
+                    .seventy-five-percent { width: 75%; }
+                    .seventy-percent { width: 70%; }
+                    .sixty-percent { width: 60%; }
+                    .fifty-percent { width: 50%; }
+                    .fourty-percent { width: 50%; }
                 }
             }
         }
@@ -445,7 +458,7 @@ section {
 }
 
 .portfolio-item:hover .hover-items {
-    opacity: 1;
+    opacity: 0.92;
     transform: scale(1);
 }
 

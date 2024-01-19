@@ -144,18 +144,18 @@ HomeAsset::register($this);
 
     <section class="container skills" id="skills">
         <div class="main-title">
-            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Programming skills');?></span><span class="bg-text"><?= Yii::t('app','Programming');?></span></h2>
+            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Skills and knowledge');?></span><span class="bg-text"><?= Yii::t('app','Skills');?></span></h2>
         </div>
         <div class="skills-container">
             <div class="about-stats">
-                <h4 class="stat-title"><?= Yii::t('app','My Skills');?></h4>
+                <h4 class="stat-title"><?= Yii::t('app','Programming skills and knowledge');?></h4>
                 <div class="progress-bars">
                     <div class="progress-bar">
                         <p class="prog-title">html5</p>
                         <div class="progress-con">
                             <p class="prog-text">80%</p>
                             <div class="progress">
-                                <span class="html"></span>
+                                <span class="eighty-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@ HomeAsset::register($this);
                         <div class="progress-con">
                             <p class="prog-text">95%</p>
                             <div class="progress">
-                                <span class="css"></span>
+                                <span class="ninety-five-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ HomeAsset::register($this);
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
                             <div class="progress">
-                                <span class="js"></span>
+                                <span class="seventy-five-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ HomeAsset::register($this);
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
                             <div class="progress">
-                                <span class="react"></span>
+                                <span class="seventy-five-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ HomeAsset::register($this);
                         <div class="progress-con">
                             <p class="prog-text">87%</p>
                             <div class="progress">
-                                <span class="node"></span>
+                                <span class="eighty-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -200,21 +200,105 @@ HomeAsset::register($this);
                         <div class="progress-con">
                             <p class="prog-text">70%</p>
                             <div class="progress">
-                                <span class="python"></span>
+                                <span class="eighty-percent"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="container languages" id="languages">
-        <div class="main-title">
-            <h2>My <span>Languages</span><span class="bg-text">Languages</span></h2>
-        </div>
-        <div class="languages-container">
-            <!-- TODO -->
+            <div class="about-stats">
+                <h4 class="stat-title"><?= Yii::t('app','Professional skills and knowledge');?></h4>
+                <div class="progress-bars">
+                    <div class="progress-bar">
+                        <p class="prog-title">User attention</p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Teamworking</p>
+                        <div class="progress-con">
+                            <p class="prog-text">95%</p>
+                            <div class="progress">
+                                <span class="ninety-five-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">javascript</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="seventy-five-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">ReactJS</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="seventy-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">NodeJS</p>
+                        <div class="progress-con">
+                            <p class="prog-text">87%</p>
+                            <div class="progress">
+                                <span class="eighty-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Python</p>
+                        <div class="progress-con">
+                            <p class="prog-text">70%</p>
+                            <div class="progress">
+                                <span class="seventy-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <h4 class="stat-title"><?= Yii::t('app','Languages');?></h4>
+                <div class="progress-bars">
+                    <div class="progress-bar">
+                        <p class="prog-title"><?= Yii::t('app','English');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">60%</p>
+                            <div class="progress">
+                                <span class="sixty-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title"><?= Yii::t('app','Spanish');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">90%</p>
+                            <div class="progress">
+                                <span class="ninety-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title"><?= Yii::t('app','Catalan');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">90%</p>
+                            <div class="progress">
+                                <span class="ninety-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="container" id="portfolio">
@@ -360,46 +444,46 @@ HomeAsset::register($this);
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Location</span>
+                                <span>Location :</span>
                             </div>
                             <p>
-                                : <?= Yii::t('app','Vilalba dels Arcs, Tarragona, Spain'); ?>
+                                <?= Yii::t('app','Vilalba dels Arcs, Tarragona, Spain'); ?>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-envelope"></i>
-                                <span>Email</span>
+                                <span>Email :</span>
                             </div>
                             <p>
-                                <span>: <a href="mailto:joel97vil@gmail.com" target="_blank">joel97vil@gmail.com</a></span>
+                                <span><a href="mailto:joel97vil@gmail.com" target="_blank">joel97vil@gmail.com</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-user-graduate"></i>
-                                <span><?= Yii::t('app','Education');?></span>
+                                <span><?= Yii::t('app','Education');?> :</span>
                             </div>
                             <p>
-                                <span>: <a href="https://ioc.xtec.cat/" target="_blank">Institut Obert de Catalunya (IOC)</a></span>
+                                <span><a href="https://ioc.xtec.cat/" target="_blank">Institut Obert de Catalunya (IOC)</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-user-graduate"></i>
-                                <span><?= Yii::t('app','Mobile Number'); ?></span>
+                                <span><?= Yii::t('app','Mobile Number'); ?> :</span>
                             </div>
                             <p>
-                                <span>: <a href="tel:+34681294919" target="_blank">+34 681 29 49 19</a></span>
+                                <span><a href="tel:+34681294919" target="_blank">+34 681 29 49 19</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-globe-africa"></i>
-                                <span><?= Yii::t('app','Languages');?></span>
+                                <span><?= Yii::t('app','Languages');?> :</span>
                             </div>
                             <p>
-                                <span>: <?= Yii::t('app','English, Spanish, Catalan');?></span>
+                                <span><?= Yii::t('app','English, Spanish, Catalan');?></span>
                             </p>
                         </div>
                     </div>
@@ -418,18 +502,23 @@ HomeAsset::register($this);
                     </div>
                 </div>
                 <div class="right-contact">
-                    <form action="" class="contact-form">
+                    <form action="/site/contact" class="contact-form" method="post">
                         <div class="input-control i-c-2">
-                            <input type="text" required placeholder="<?= Yii::t('app','YOUR NAME'); ?>">
-                            <input type="email" required placeholder="<?= Yii::t('app','YOUR EMAIL'); ?>">
+                            <input type="text" required placeholder="<?= Yii::t('app','Your name'); ?>">
+                            <input type="email" required placeholder="<?= Yii::t('app','Your email'); ?>">
                         </div>
                         <div class="input-control">
-                            <input type="text" required placeholder="<?= Yii::t('app','ENTER SUBJECT'); ?>">
+                            <input type="text" required placeholder="<?= Yii::t('app','Enter subject'); ?>">
                         </div>
                         <div class="input-control">
                             <textarea name="" id="" cols="15" rows="8" placeholder="<?= Yii::t('app','Your message here...'); ?>"></textarea>
                         </div>
-                        <?= Yii::$app->view->renderFile('@app/views/components/_download_button_submit.php'); ?>
+                        <div class="submit-btn">
+                            <button type="submit" class="main-btn">
+                                <span class="btn-text"><?= Yii::t('app','Send'); ?></span>
+                                <span class="btn-icon"><i class="fas fa-envelope"></i></span>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -447,9 +536,6 @@ HomeAsset::register($this);
     <div class="control" data-id="skills">
         <i class="fas fa-code"></i>
     </div>
-    <div class="control" data-id="languages">
-        <i class="fas fa-language"></i>
-    </div>
     <div class="control" data-id="portfolio">
         <i class="fas fa-file"></i>
     </div>
@@ -461,5 +547,5 @@ HomeAsset::register($this);
     </div>
 </div>
 <div class="theme-btn">
-    <i class="fas fa-adjust"></i>
+    <i class="fas fa-paint-brush"></i>
 </div>

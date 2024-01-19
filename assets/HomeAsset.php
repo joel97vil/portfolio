@@ -21,10 +21,10 @@ class HomeAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/styles.css?v=1'//.Yii::$app->params['jsVersion'],
+        'css/styles.css?v=2'//.Yii::$app->params['jsVersion'],
     ];
     public $js = [
-        'js/app.js?v=1'//.Yii::$app->params['jsVersion']
+        'js/app.js?v=2'//.Yii::$app->params['jsVersion']
     ];
     public $depends = [
         'yii\web\YiiAsset',

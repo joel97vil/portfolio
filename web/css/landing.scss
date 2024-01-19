@@ -1,9 +1,9 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  background-color: var(--color-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    background-color: var(--color-primary);
 }
 
 :root {
@@ -15,14 +15,14 @@
 }
 
 .blinker {
-  animation: blinker 1s linear infinite;
-}
-
+    animation: blinker 1s linear infinite;
+}  
 @keyframes blinker {
   50% {
     opacity: 0;
   }
 }
+
 div.prompt-background {
   width: 100%;
   height: 100%;
@@ -36,5 +36,3 @@ div.prompt-background {
 .underlineable:hover {
   text-decoration: underline;
 }
-
-/*# sourceMappingURL=landing.css.map */
