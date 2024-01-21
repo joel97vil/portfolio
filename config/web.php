@@ -7,12 +7,14 @@ $config = [
     'id' => 'joel-faura-m',
     'name' => 'Joel Faura M.',
     'language' => 'ca-ES',
-    'sourceLanguage' => 'en-US',
+    //'sourceLanguage' => 'en-US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@img'   => '/img/layout',
+        '@blog'  => '/img/blog'
     ],
     'components' => [
         'request' => [
@@ -58,6 +60,7 @@ $config = [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/translations',
+                    'sourceLanguage' => 'en-US',
                     'fileMap' => [
                         'app' => 'app.php'
                     ],

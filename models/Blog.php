@@ -11,6 +11,8 @@ use Yii;
  * @property string $title
  * @property string $slug
  * @property resource $body
+ * @property string $bodyTxt
+ * @property string $bodyPreview
  * @property string $created_at
  * @property string $updated_at
  * @property int $user_id
@@ -88,5 +90,40 @@ class Blog extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(Blog::class, ['id' => 'user_id']);
+    }
+
+    /**
+     * Gets query for [[BlogHasImages]] where Image is BANNER.
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBannerImage()
+    {
+        return BlogHasImage::find()->where(['blog_id' => $this->id])->andWhere(['isBanner' => true])->one();
+    }
+
+    /**
+     * Gets body attribute casted as string
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBodyTxt()
+    {
+        return yii\helpers\StringHelper::base64UrlDecode($this->body);
+    }
+
+    /**
+     * Gets short part of body attribute
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBodyPreview()
+    {
+        return substr($this->bodyTxt, 0, (strlen($this->bodyTxt) > 30 ? 30 : strlen($this->bodyTxt) - 1)) . '...';
+    }
+
+    public static function getLastest()
+    {
+        return Blog::find()->orderBy('created_at', SORT_DESC)->limit(10)->all();
     }
 }

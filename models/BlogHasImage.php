@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property int $blog_id
  * @property string $url
+ * @property string $fullUrl
  * @property string $title
  * @property string $alt
  * @property bool $isBanner
@@ -64,5 +65,14 @@ class BlogHasImage extends \yii\db\ActiveRecord
     public function getBlog()
     {
         return $this->hasOne(Blog::class, ['id' => 'blog_id']);
+    }
+
+    /**
+     * Gets full url path
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFullUrl(){
+        return Yii::getAlias('@blog') . '/' . $this->url;
     }
 }

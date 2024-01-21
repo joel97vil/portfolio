@@ -86,4 +86,19 @@ class SiteController extends Controller
             return $this->refresh();
         }
     }
+
+    /**
+     * Sets the language of the webpage
+     *
+     * @return Response|string
+     */
+    public function actionChangeLanguage()
+    {
+        if(isset($_REQUEST['lang']) && $_REQUEST['lang'] != null)
+        {
+            Yii::$app->session->set('language', $_REQUEST['lang']);
+        }
+
+        return $this->redirect(['home']);
+    }
 }

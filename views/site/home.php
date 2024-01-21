@@ -5,6 +5,7 @@
 
 use app\assets\HomeAsset;
 use yii\bootstrap5\Html;
+use yii\bootstrap5\Modal;
 
 HomeAsset::register($this);
 
@@ -19,7 +20,7 @@ HomeAsset::register($this);
         <div class="left-header">
             <div class="h-shape"></div>
             <div class="image">
-                <img src="img/hero.png" alt="">
+                <img src="img/layout/hero.png" alt="">
             </div>
         </div>
         <div class="right-header">
@@ -311,7 +312,7 @@ HomeAsset::register($this);
         <div class="portfolios">
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/port1.jpg" alt="">
+                    <img src="img/layout/port1.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>Where do I sleep? (WDIS)</h3>
@@ -330,7 +331,7 @@ HomeAsset::register($this);
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/port2.jpg" alt="">
+                    <img src="img/layout/port2.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3><?= Yii::t('app','Portfolio (this website)');?></h3>
@@ -349,7 +350,7 @@ HomeAsset::register($this);
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/port3.jpg" alt="">
+                    <img src="img/layout/port3.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>Elvarg</h3>
@@ -368,7 +369,7 @@ HomeAsset::register($this);
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/port4.jpg" alt="">
+                    <img src="img/layout/port4.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>XAMPP Web Initializer</h3>
@@ -387,7 +388,7 @@ HomeAsset::register($this);
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/port5.jpg" alt="">
+                    <img src="img/layout/port5.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>JS Loading Spinner</h3>
@@ -412,19 +413,34 @@ HomeAsset::register($this);
                 <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Blogs');?></span><span class="bg-text"><?= Yii::t('app','Blogs');?></span></h2>
             </div>
             <div class="blogs">
-                <!-- TODO: Here goes a foreach to iterate over blogs -->
-                <div class="blog">
-                    <img src="img/port6.jpg" alt="">
-                    <div class="blog-text">
-                        <h4>
-                            How to Create Your Own Website
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Doloribus natus voluptas, eos obcaecati recusandae amet?
-                        </p>
+                <?php
+                    $blogs = app\models\Blog::getLastest();
+                    foreach($blogs as $blog) {
+                        if($blog != null){
+                ?>
+                    <div class="blog" data-id="<?= $blog->id; ?>">
+                        <?php
+                            if($blog->bannerImage != null)
+                            {
+                                echo Html::img([$blog->bannerImage->fullUrl, ['alt' => $blog->bannerImage->alt]]);
+                            }
+                            else{
+                                echo Html::img(["@blog/port6.jpg", ['alt' => $blog->title]]);
+                            }
+                        ?>
+                        <div class="blog-text">
+                            <h4>
+                                <?= $blog->title ?>
+                            </h4>
+                            <p>
+                                <?= $blog->bodyPreview ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
+                <?php
+                        }
+                    }
+                ?>
             </div>
         </div>
     </section>
@@ -549,3 +565,27 @@ HomeAsset::register($this);
 <div class="theme-btn">
     <i class="fas fa-paint-brush"></i>
 </div>
+<div class="language-btn">
+    <i class="fas fa-language"></i>
+</div>
+
+<?php
+Modal::begin([
+    'id' => 'languages-modal',
+    //'header' => '',
+    'size' => 'modal-sm'
+]);
+echo Html::a('English', ['/site/change-language', 'lang' => 'en-US']);
+echo Html::a('Español', ['/site/change-language', 'lang' => 'es-ES']);
+echo Html::a('Català', ['/site/change-language', 'lang' => 'ca-ES']);
+Modal::end();
+
+
+Modal::begin([
+    'id' => 'blog-modal',
+    //'header' => '',
+    'size' => 'modal-lg'
+]);
+//BLOG CONTENT GOES HERE!
+Modal::end();
+?>

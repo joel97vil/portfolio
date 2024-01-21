@@ -162,6 +162,36 @@ section {
   pointer-events: none;
 }
 
+.language-btn {
+  top: 5%;
+  left: 3%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-grey-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-in-out;
+}
+.language-btn:active {
+  transform: translateY(-3px);
+}
+.language-btn:hover {
+  background-color: var(--color-terciary);
+}
+.language-btn:hover i {
+  color: var(--color-white);
+}
+.language-btn i {
+  font-size: 1.4rem;
+  color: var(--color-grey-2);
+  pointer-events: none;
+}
+
 /*Header-content*/
 .header-content {
   display: grid;
@@ -708,6 +738,18 @@ section {
   transform: translate(-50%, -50%);
   font-weight: 800;
   font-size: 6.3rem;
+}
+
+.modal-content {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-black);
+}
+.modal-content .btn-close {
+  color: var(--color-secondary);
+}
+.modal-content a {
+  display: block;
 }
 
 .about-container .left-about p {
