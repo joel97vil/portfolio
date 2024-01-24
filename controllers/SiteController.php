@@ -94,11 +94,12 @@ class SiteController extends Controller
      */
     public function actionChangeLanguage()
     {
-        if(isset($_REQUEST['lang']) && $_REQUEST['lang'] != null)
+        if(Yii::$app->request->get('lang') != null)
         {
-            Yii::$app->session->set('language', $_REQUEST['lang']);
+            $language = Yii::$app->request->get('lang');
+            Yii::$app->language = $language;
         }
 
-        return $this->redirect(['home']);
+        return $this->render('home');
     }
 }

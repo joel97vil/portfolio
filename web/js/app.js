@@ -17,7 +17,6 @@
 $ = jQuery;
 $( window ).on( "load", function() {
     $(".language-btn").on("click", function(e) {
-        //TODO: Display a little modal with all the languages available to translate
         e.preventDefault();
         $("#languages-modal").modal('show');
     });

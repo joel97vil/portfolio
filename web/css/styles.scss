@@ -712,11 +712,19 @@ section {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     border-bottom: 1px solid var(--color-black);
-    .btn-close {
-        color: var(--color-secondary);
+    .modal-header{
+        color: var(--color-grey-1);
+        //button { color: var(--color-white) !important; }
+        //h5 { color: var(--color-grey-1); }
     }
-    a {
-        display: block;
+    .modal-body {
+        a {
+            display: block;
+            &:hover {
+                color: var(--color-terciary);
+                text-decoration: underline solid;
+            }
+        }
     }
 }
 

@@ -571,9 +571,10 @@ HomeAsset::register($this);
 
 <?php
 Modal::begin([
+    'title' => '<i class="fas fa-language"></i> ' . Yii::t('app', 'Language'),
     'id' => 'languages-modal',
-    //'header' => '',
-    'size' => 'modal-sm'
+    'size' => 'modal-sm',
+    'centerVertical' => true
 ]);
 echo Html::a('English', ['/site/change-language', 'lang' => 'en-US']);
 echo Html::a('Español', ['/site/change-language', 'lang' => 'es-ES']);
@@ -582,9 +583,10 @@ Modal::end();
 
 
 Modal::begin([
+    //'title' => '',
     'id' => 'blog-modal',
-    //'header' => '',
-    'size' => 'modal-lg'
+    'size' => 'modal-lg',
+    'centerVertical' => true
 ]);
 //BLOG CONTENT GOES HERE!
 Modal::end();
