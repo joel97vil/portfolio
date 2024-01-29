@@ -81,6 +81,7 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            //TODO: Avoid sql injection and others before send a mail to the admin's mail
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();

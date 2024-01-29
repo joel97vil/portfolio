@@ -29,9 +29,10 @@ HomeAsset::register($this);
                 <?= Yii::t("app", "A FullStack Developer."); ?>
             </h1>
             <p>
-                <?= Yii::t('app',"I'm a FullStack App and Web Developer, I love to create beautiful and functional solutions."); ?>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, libero?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
+                <?= Yii::t("app", "I'm a FullStack App and Web Developer, I love to create beautiful and functional solutions."); ?>
+                <?= Yii::t("app", "Fullstack developer with more than four years of experience in the sector being part in various projects in a small development team.");?>
+                <?= Yii::t("app", "Knowledgeable and collaborator in most project phases: analysis, functional requirements, documentations, task organization, development, testing, version control, steps to production, integrations and customer training.");?>
+                <?= Yii::t("app", "Interested in cybersecurity, new development technologies and ensuring good user experience.");?>
             </p>
             <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
         </div>
@@ -48,6 +49,9 @@ HomeAsset::register($this);
                 <p>
                     <?= Yii::t('app',"I've been developer since I was 11 years old, but I didn't knew that"); ?>
                     <?= Yii::t('app',"I started programming at 11 because I was a big fan of RuneScape, a MMO-RPG. I wanted to investigate how the game could be built. And I starting my research of how to do it I found the RuneScape private servers world, which is a RS replica with Java Code..."); ?>
+                    <?= Yii::t("app", "Fullstack developer with more than four years of experience in the sector being part in various projects in a small development team.");?>
+                    <?= Yii::t("app", "Knowledgeable and collaborator in most project phases: analysis, functional requirements, documentations, task organization, development, testing, version control, steps to production, integrations and customer training.");?>
+                    <?= Yii::t("app", "Interested in cybersecurity, new development technologies and ensuring good user experience.");?>
                 </p>
                 <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
             </div>
@@ -84,10 +88,10 @@ HomeAsset::register($this);
                 <div class="tl-icon">
                     <i class="fas fa-briefcase"></i>
                 </div>
-                <p class="tl-duration">2021 - present</p>
+                <p class="tl-duration">2021 - <?= Yii::t('app', "present");?></p>
                 <h5><?= Yii::t('app','Fullstack developer');?><span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                    <?= Yii::t('app', "Being part of all project phases in various projects, mainly desktop applications (some analysis, developing, documentating, deploying, etc.).");?>
                 </p>
             </div>
             <div class="timeline-item">
@@ -97,37 +101,37 @@ HomeAsset::register($this);
                 <p class="tl-duration">2019 - 2021</p>
                 <h5><?= Yii::t('app','Web applications developer');?><span> - TERRA ALTA CONSULTORIA, TIC.</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                    <?= Yii::t('app', "Developing complete web applications (with backoffice and frontoffice), designing database and integrating third-party apps and plugins on our web-apps."); ?>
                 </p>
             </div>
             <div class="timeline-item">
                 <div class="tl-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <p class="tl-duration">2022 - present</p>
-                <h5>CFGS Desenvolupament d'aplicacions multiplataforma<span> - Institut Obert de Catalunya (IOC)</span></h5>
+                <p class="tl-duration">2023 - <?= Yii::t('app', "present");?></p>
+                <h5><?= Yii::t('app', "Cicle Formatiu de Grau Superior Desenvolupament d'aplicacions multiplataforma");?><span> (CFGS DAM)</span><span> - Institut Obert de Catalunya (IOC)</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                <?= Yii::t('app', "Desktop applications languages as C#, projects management, Data-access-objects, .Net Framework, Java, etc.");?>
                 </p>
             </div>
             <div class="timeline-item">
                 <div class="tl-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <p class="tl-duration">2020 - 2022</p>
-                <h5>CFGS Desenvolupament d'aplicacions web<span> - Institut Obert de Catalunya (IOC)</span></h5>
+                <p class="tl-duration">2022 - 2022</p>
+                <h5><?= Yii::t('app', "Cicle Formatiu de Grau Superior Desenvolupament d'aplicacions web");?><span> (CFGS DAW)</span><span> - Institut Obert de Catalunya (IOC)</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                    <?= Yii::t('app', "Accessibilty and usability, Data-access-objects, Web services and APIs, complete web development, PHP frameworks, JavaScript frameworks, etc.");?>
                 </p>
             </div>
             <div class="timeline-item">
                 <div class="tl-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <p class="tl-duration">2017 - 2019</p>
-                <h5>CFGS Desenvolupament d'aplicacions web<span> - Institut Provençana</span></h5>
+                <p class="tl-duration">2018 - 2022</p>
+                <h5><?= Yii::t('app', "Cicle Formatiu de Grau Superior Desenvolupament d'aplicacions web");?><span> (CFGS DAW)</span><span> - Institut Provençana</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                    <?= Yii::t('app', 'Basics of programation (sequential and objects-orientated), advanced databases (mySQL and Oracle), advanced markdown languages, development environments, etc.');?>
                 </p>
             </div>
             <div class="timeline-item">
@@ -135,9 +139,9 @@ HomeAsset::register($this);
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <p class="tl-duration">2015 - 2017</p>
-                <h5>Cicle Formatiu de Grau Mitjà Sistemes Microinformàtics i Xarxes - (CFGM SMIX)<span> - Institut Provençana</span></h5>
+                <h5><?= Yii::t('app', "Cicle Formatiu de Grau Mitjà Sistemes Microinformàtics i Xarxes");?><span> (CFGM SMIX)</span><span> - Institut Provençana</span></h5>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
+                    <?= Yii::t('app', "Systems and services administration (Windows and Linux), basic markdown languages usage, basic database usage (Access and equivalents), and basic WordPress");?>
                 </p>
             </div>
         </div>
@@ -145,23 +149,14 @@ HomeAsset::register($this);
 
     <section class="container skills" id="skills">
         <div class="main-title">
-            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Skills and knowledge');?></span><span class="bg-text"><?= Yii::t('app','Skills');?></span></h2>
+            <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Skills & knowledge');?></span><span class="bg-text"><?= Yii::t('app','Knowledge');?></span></h2>
         </div>
         <div class="skills-container">
             <div class="about-stats">
                 <h4 class="stat-title"><?= Yii::t('app','Programming skills and knowledge');?></h4>
                 <div class="progress-bars">
                     <div class="progress-bar">
-                        <p class="prog-title">html5</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="eighty-percent"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">css3</p>
+                        <p class="prog-title"><?= Yii::t('app','C# (.Net Framework 4.5 and 4.8');?></p>
                         <div class="progress-con">
                             <p class="prog-text">95%</p>
                             <div class="progress">
@@ -170,7 +165,34 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">javascript</p>
+                        <p class="prog-title"><?= Yii::t('app','PHP (Yii2 and Laravel)');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">90%</p>
+                            <div class="progress">
+                                <span class="ninety-five-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">Javascript (JQuery)</p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="eighty-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title"><?= Yii::t('app','SQL Server (2005 to 2019)');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="eighty-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title">MySQL</p>
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
                             <div class="progress">
@@ -179,29 +201,20 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">ReactJS</p>
+                        <p class="prog-title">Java</p>
                         <div class="progress-con">
-                            <p class="prog-text">75%</p>
+                            <p class="prog-text">60%</p>
                             <div class="progress">
-                                <span class="seventy-five-percent"></span>
+                                <span class="sixty-percent"></span>
                             </div>
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">NodeJS</p>
+                        <p class="prog-title">VisualBasic (.Net Framework)</p>
                         <div class="progress-con">
-                            <p class="prog-text">87%</p>
+                            <p class="prog-text">40%</p>
                             <div class="progress">
-                                <span class="eighty-percent"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-con">
-                            <p class="prog-text">70%</p>
-                            <div class="progress">
-                                <span class="eighty-percent"></span>
+                                <span class="forty-percent"></span>
                             </div>
                         </div>
                     </div>
@@ -212,16 +225,7 @@ HomeAsset::register($this);
                 <h4 class="stat-title"><?= Yii::t('app','Professional skills and knowledge');?></h4>
                 <div class="progress-bars">
                     <div class="progress-bar">
-                        <p class="prog-title">User attention</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Teamworking</p>
+                        <p class="prog-title"><?= Yii::t('app','Teamworking');?></p>
                         <div class="progress-con">
                             <p class="prog-text">95%</p>
                             <div class="progress">
@@ -230,7 +234,16 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">javascript</p>
+                        <p class="prog-title"><?= Yii::t('app','User attention');?></p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="eighty-percent"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <p class="prog-title"><?= Yii::t('app','Organization (self and team)');?></p>
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
                             <div class="progress">
@@ -239,27 +252,18 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">ReactJS</p>
+                        <p class="prog-title"><?= Yii::t('app','Documentation (code and documents)');?></p>
                         <div class="progress-con">
-                            <p class="prog-text">75%</p>
+                            <p class="prog-text">70%</p>
                             <div class="progress">
                                 <span class="seventy-percent"></span>
                             </div>
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">NodeJS</p>
+                        <p class="prog-title"><?= Yii::t('app','Development environments (SCRUM or KanBan)');?></p>
                         <div class="progress-con">
-                            <p class="prog-text">87%</p>
-                            <div class="progress">
-                                <span class="eighty-percent"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-con">
-                            <p class="prog-text">70%</p>
+                            <p class="prog-text">60%</p>
                             <div class="progress">
                                 <span class="seventy-percent"></span>
                             </div>
@@ -272,7 +276,7 @@ HomeAsset::register($this);
                 <h4 class="stat-title"><?= Yii::t('app','Languages');?></h4>
                 <div class="progress-bars">
                     <div class="progress-bar">
-                        <p class="prog-title"><?= Yii::t('app','English');?></p>
+                        <p class="prog-title"><?= Yii::t('app','English');?> - A2</p>
                         <div class="progress-con">
                             <p class="prog-text">60%</p>
                             <div class="progress">
@@ -281,7 +285,7 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title"><?= Yii::t('app','Spanish');?></p>
+                        <p class="prog-title"><?= Yii::t('app','Spanish');?> - C1</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
                             <div class="progress">
@@ -290,7 +294,7 @@ HomeAsset::register($this);
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title"><?= Yii::t('app','Catalan');?></p>
+                        <p class="prog-title"><?= Yii::t('app','Catalan');?> - C1</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
                             <div class="progress">
@@ -447,20 +451,19 @@ HomeAsset::register($this);
     <section class="container contact" id="contact">
         <div class="contact-container">
             <div class="main-title">
-                <h2>Contact <span>Me</span><span class="bg-text"><?= Yii::t('app','Contact'); ?></span></h2>
+                <h2><?= Yii::t('app','Contact');?> <span><?= Yii::t('app','Me');?></span><span class="bg-text"><?= Yii::t('app','Contact'); ?></span></h2>
             </div>
             <div class="contact-content-con">
                 <div class="left-contact">
                     <h4><?= Yii::t('app','Contact me here');?></h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        In, laborum numquam? Quam excepturi perspiciatis quas quasi.
+                        <?= Yii::t('app', "Do you want to collaborate with me with any project, do you want more info about a project, or about me? Then you can contact me using the following channels, or by sending me a message through this web."); ?>
                     </p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Location :</span>
+                                <span><?= Yii::t('app','Location');?> :</span>
                             </div>
                             <p>
                                 <?= Yii::t('app','Vilalba dels Arcs, Tarragona, Spain'); ?>
@@ -472,7 +475,7 @@ HomeAsset::register($this);
                                 <span>Email :</span>
                             </div>
                             <p>
-                                <span><a href="mailto:joel97vil@gmail.com" target="_blank">joel97vil@gmail.com</a></span>
+                                <span><a href="mailto:info@joelfaura.com" target="_blank">info@joelfaura.com</a></span>
                             </p>
                         </div>
                         <div class="contact-item">
@@ -482,15 +485,6 @@ HomeAsset::register($this);
                             </div>
                             <p>
                                 <span><a href="https://ioc.xtec.cat/" target="_blank">Institut Obert de Catalunya (IOC)</a></span>
-                            </p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon">
-                                <i class="fas fa-user-graduate"></i>
-                                <span><?= Yii::t('app','Mobile Number'); ?> :</span>
-                            </div>
-                            <p>
-                                <span><a href="tel:+34681294919" target="_blank">+34 681 29 49 19</a></span>
                             </p>
                         </div>
                         <div class="contact-item">

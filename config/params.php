@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'adminEmail' => 'joel97vil@gmail.com',
-    'senderEmail' => 'joel97vil@gmail.com',
+    'adminEmail' => 'info@joelfaura.com',
+    'senderEmail' => 'info@joelfaura.com',
     'senderName' => 'Joel Faura M.',
     'jsVersion' => '1',
     'filesdir' => 'files',
