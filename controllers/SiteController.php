@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use yii\helpers\Html;
 use app\models\ContactForm;
 
 class SiteController extends Controller
@@ -81,8 +82,14 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            //TODO: Avoid sql injection and others before send a mail to the admin's mail
-            Yii::$app->session->setFlash('contactFormSubmitted');
+            
+            Yii::$app->mailer->compose()
+                    ->setFrom('admin@joelfaura.com')
+                    ->setTo('joelfauram@gmail.com')
+                    ->setSubject('Portfolio message | ' . $model->subject)
+                    ->setHtmlBody(Html::encode($model->body))
+                    ->send();
+            Yii::$app->session->setFlash(Yii::t('app','Contact form successfully submitted'));
 
             return $this->refresh();
         }
