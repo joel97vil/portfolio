@@ -426,18 +426,18 @@ HomeAsset::register($this);
                         <?php
                             if($blog->bannerImage != null)
                             {
-                                echo Html::img([$blog->bannerImage->fullUrl, ['alt' => $blog->bannerImage->alt]]);
+                                echo Html::img([Html::encode($blog->bannerImage->fullUrl), ['alt' => Html::encode($blog->bannerImage->alt)]]);
                             }
                             else{
-                                echo Html::img(["@blog/port6.jpg", ['alt' => $blog->title]]);
+                                echo Html::img(["@blog/port6.jpg", ['alt' => Html::encode($blog->title)]]);
                             }
                         ?>
                         <div class="blog-text">
                             <h4>
-                                <?= $blog->title ?>
+                                <?= Html::encode($blog->title); ?>
                             </h4>
                             <p>
-                                <?= $blog->bodyPreview ?>
+                                <?= Html::encode($blog->bodyPreview) ?>
                             </p>
                         </div>
                     </div>

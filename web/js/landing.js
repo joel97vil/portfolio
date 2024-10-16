@@ -10,7 +10,7 @@ $(window).on("load", function() {
         window.setTimeout(redirect, 2000);
     });
 
-    //TODO: Catch tap or click event. 2 seconds later, redirect to home
+    //Catch tap or click event. 2 seconds later, redirect to home
     $(this).on(custom_event, this, function () {
         window.setTimeout(redirect, 2000);
     });
