@@ -1,4 +1,6 @@
 let seconds = 10;
+let custom_event = $.support.touch ? "tap" : "click";
+
 
 $(window).on("load", function() {
     //Capture any key pressed on the keyboard to write its value before the caret. 2 seconds later, redirect to home
@@ -7,8 +9,11 @@ $(window).on("load", function() {
         $("#cursor").before(String.fromCharCode(e.which));
         window.setTimeout(redirect, 2000);
     });
-    
-    //TODO: Veure com capturar events de pantalla de mòbil
+
+    //TODO: Catch tap or click event. 2 seconds later, redirect to home
+    $(this).on(custom_event, this, function () {
+        window.setTimeout(redirect, 2000);
+    });
 
     //Every second lapsed, update the countdown on the screen. If the seconds arrive to 0, redirect to home
     var x = setInterval(function() {
