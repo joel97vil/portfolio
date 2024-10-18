@@ -20,7 +20,7 @@ HomeAsset::register($this);
         <div class="left-header">
             <div class="h-shape"></div>
             <div class="image">
-                <img src="img/layout/hero.png" alt="">
+                <img src="img/layout/joel.png" alt="">
             </div>
         </div>
         <div class="right-header">
@@ -316,7 +316,7 @@ HomeAsset::register($this);
         <div class="portfolios">
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/layout/port1.jpg" alt="">
+                    <img src="img/layout/wdis.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>Where do I sleep? (WDIS)</h3>
@@ -325,17 +325,14 @@ HomeAsset::register($this);
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
+                            <i class="fa fa-play"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/layout/port2.jpg" alt="">
+                    <img src="img/layout/port1.jpg" alt="">
                 </div>
                 <div class="hover-items">
                     <h3><?= Yii::t('app','Portfolio (this website)');?></h3>
@@ -344,17 +341,14 @@ HomeAsset::register($this);
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
+                            <i class="fa fa-play"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/layout/port3.jpg" alt="">
+                    <img src="img/layout/elvarg.png" alt="">
                 </div>
                 <div class="hover-items">
                     <h3>Elvarg</h3>
@@ -363,10 +357,7 @@ HomeAsset::register($this);
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
+                            <i class="fa fa-play"></i>
                         </a>
                     </div>
                 </div>
@@ -382,10 +373,7 @@ HomeAsset::register($this);
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
+                            <i class="fa fa-play"></i>
                         </a>
                     </div>
                 </div>
@@ -401,53 +389,50 @@ HomeAsset::register($this);
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
+                            <i class="fa fa-play"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container" id="blogs">
+    <!--<section class="container" id="blogs">
         <div class="blogs-content">
             <div class="main-title">
                 <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Blogs');?></span><span class="bg-text"><?= Yii::t('app','Blogs');?></span></h2>
             </div>
             <div class="blogs">
                 <?php
-                    $blogs = app\models\Blog::getLastest();
-                    foreach($blogs as $blog) {
-                        if($blog != null){
+                    // $blogs = app\models\Blog::getLastest();
+                    // foreach($blogs as $blog) {
+                    //     if($blog != null){
                 ?>
-                    <div class="blog" data-id="<?= $blog->id; ?>">
+                    <div class="blog" data-id="<?php // echo $blog->id; ?>">
                         <?php
-                            if($blog->bannerImage != null)
-                            {
-                                echo Html::img([Html::encode($blog->bannerImage->fullUrl), ['alt' => Html::encode($blog->bannerImage->alt)]]);
-                            }
-                            else{
-                                echo Html::img(["@blog/port6.jpg", ['alt' => Html::encode($blog->title)]]);
-                            }
+                            // if($blog->bannerImage != null)
+                            // {
+                            //     echo Html::img([Html::encode($blog->bannerImage->fullUrl), ['alt' => Html::encode($blog->bannerImage->alt)]]);
+                            // }
+                            // else{
+                            //     echo Html::img(["@blog/port6.jpg", ['alt' => Html::encode($blog->title)]]);
+                            // }
                         ?>
                         <div class="blog-text">
                             <h4>
-                                <?= Html::encode($blog->title); ?>
+                                <?php // echo Html::encode($blog->title); ?>
                             </h4>
                             <p>
-                                <?= Html::encode($blog->bodyPreview) ?>
+                                <?php // echo Html::encode($blog->bodyPreview) ?>
                             </p>
                         </div>
                     </div>
                 <?php
-                        }
-                    }
+                    //     }
+                    // }
                 ?>
             </div>
         </div>
-    </section>
+    </section>-->
     <section class="container contact" id="contact">
         <div class="contact-container">
             <div class="main-title">
@@ -540,18 +525,18 @@ HomeAsset::register($this);
     <div class="control active-btn" data-id="home" >
         <i class="fas fa-home"></i>
     </div>
-    <div class="control" data-id="about">
+    <div class="control" data-id="about" alt="<?= Yii::t('app','About') ?>">
         <i class="fas fa-user"></i>
     </div>
-    <div class="control" data-id="skills">
+    <div class="control" data-id="skills" alt="<?= Yii::t('app','Skills') ?>">
         <i class="fas fa-code"></i>
     </div>
     <div class="control" data-id="portfolio">
         <i class="fas fa-file"></i>
     </div>
-    <div class="control" data-id="blogs">
+    <!--<div class="control" data-id="blogs">
         <i class="far fa-newspaper"></i>
-    </div>
+    </div>-->
     <div class="control" data-id="contact">
         <i class="fas fa-envelope-open"></i>
     </div>
