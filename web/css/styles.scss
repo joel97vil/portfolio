@@ -18,6 +18,9 @@
     --color-grey-4: #454e56;
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
+    --color-inner-button-text:#FFFFFF;
+    --color-inner-button-icon:#FFFFFF;
+    --color-inner-button-hover:#FFFFFF;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
 }
@@ -35,6 +38,9 @@
     --color-grey-4: #454e56;
     --color-grey-5: #f8f8f8;
     --color-grey-6: #12181b;
+    --color-inner-button-text:#454e56;
+    --color-inner-button-icon:#f8f8f8;
+    --color-inner-button-hover:#f8f8f8;
 }
 
 body {
@@ -101,6 +107,7 @@ section {
         padding: 1rem;
         cursor: pointer;
         background-color: var(--color-grey-4);
+        color: var(--color-inner-button-text);
         width: 55px;
         height: 55px;
         border-radius: 50%;
@@ -111,19 +118,19 @@ section {
         box-shadow: var(--box-shadow-1) ;
         i {
             font-size: 1.2rem;
-            color: var(--color-grey-2);
+            color: var(--color-inner-button-icon);
             pointer-events: none;
         }
         &:hover {
             background-color: var(--color-terciary);
-            i { color: var(--color-white); }
+            i { color: var(--color-inner-button-hover); }
             //TODO: Effects to see the name of the menu part
         }
     }
     .active-btn {
         background-color: var(--color-secondary);
         transition: all .4s ease-in-out;
-        i { color: var(--color-white); }
+        i { color: var(--color-inner-button-icon); }
     }
 }
 
@@ -134,6 +141,7 @@ section {
     height: 70px;
     border-radius: 50%;
     background-color: var(--color-grey-4);
+    color: var(--color-inner-button-text);
     cursor: pointer;
     position: fixed;
     display: flex;
@@ -144,11 +152,11 @@ section {
     &:active { transform: translateY(-3px); }
     &:hover {
         background-color: var(--color-terciary);
-        i { color: var(--color-white); }
+        i { color: var(--color-inner-button-hover); }
     }
     i{
         font-size: 1.4rem;
-        color: var(--color-grey-2);
+        color: var(--color-inner-button-icon);
         pointer-events: none;
     }
 }
@@ -160,6 +168,7 @@ section {
     height: 70px;
     border-radius: 50%;
     background-color: var(--color-grey-4);
+    color: var(--color-inner-button-text);
     cursor: pointer;
     position: fixed;
     display: flex;
@@ -170,11 +179,11 @@ section {
     &:active { transform: translateY(-3px); }
     &:hover {
         background-color: var(--color-terciary);
-        i { color: var(--color-white); }
+        i { color: var(--color-inner-button-hover); }
     }
     i{
         font-size: 1.4rem;
-        color: var(--color-grey-2);
+        color: var(--color-inner-button-icon);
         pointer-events: none;
     }
 }
@@ -381,6 +390,7 @@ section {
             left: -27px;
             top: 0;
             background-color: var(--color-secondary);
+            color: var(--color-inner-button-icon);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -409,7 +419,7 @@ section {
                 font-size: 1.2rem;
             }
         }
-        p{ color: var(--color-grey-2); }
+        p { color: var(--color-grey-2); }
     }
 }
 
@@ -450,7 +460,7 @@ section {
             transition: all .4s ease-in-out;
             h3 {
                 font-size: 1.5rem;
-                color: var(--color-white);
+                color: var(--color-inner-button-icon);
                 margin-bottom: 1.5rem;
             }
             .icons {
@@ -583,8 +593,9 @@ section {
             a {
                 display: flex;
                 align-items: center;
-                color: var(--color-white);
-                background-color: var(--color-grey-5);
+                color: var(--color-inner-button-icon);
+                background-color: var(--color-terciary);
+                color: var(--color-inner-button-icon);
                 cursor: pointer;
                 justify-content: center;
                 width: 50px;
@@ -594,9 +605,10 @@ section {
                 transition: all .4s ease-in-out;
                 &:hover {
                     background-color: var(--color-secondary);
-                    i { color: var(--color-primary); }
+                    i { color: var(--color-inner-button-hover); }
                 }
                 i {
+                    color: var(--color-inner-button-icon);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -641,12 +653,20 @@ section {
 
 /*Independed components*/
 .btn-con {
+    color: var(--color-inner-button-text);
     display: flex;
     align-self: flex-start;
+    i {
+        color: var(--color-inner-button-icon);
+    }
+    &:hover
+    {
+        color: var(--color-inner-button-hover);
+    }
 }
 .main-btn {
     border-radius: 30px;
-    color: inherit;
+    color: var(--color-inner-button-text);
     font-weight: 600;
     position: relative;
     border: 1px solid var(--color-secondary);
