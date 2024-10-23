@@ -675,8 +675,35 @@ section {
   margin-left: 1.5rem;
 }
 .contact-content-con .right-contact .submit-btn {
+  color: var(--color-inner-button-text);
   display: flex;
-  justify-content: flex-start;
+  align-self: flex-start;
+}
+.contact-content-con .right-contact .submit-btn i {
+  color: var(--color-inner-button-icon);
+}
+.contact-content-con .right-contact .submit-btn:hover {
+  color: var(--color-inner-button-hover);
+}
+.contact-content-con .right-contact .main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.contact-content-con .right-contact .main-btn:hover {
+  transition: all 0.4s ease-out;
+  color: var(--color-inner-button-hover);
+}
+.contact-content-con .right-contact .main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
 }
 
 /*Independed components*/
@@ -725,6 +752,7 @@ section {
 }
 .main-btn:hover {
   transition: all 0.4s ease-out;
+  color: var(--color-inner-button-hover);
 }
 .main-btn:hover::before {
   width: 100%;

@@ -553,7 +553,8 @@ Modal::begin([
     'title' => '<i class="fas fa-language"></i> ' . Yii::t('app', 'Language'),
     'id' => 'languages-modal',
     'size' => 'modal-sm',
-    'centerVertical' => true
+    'centerVertical' => true,
+    'closeButton' => ['class' => 'btn-close btn-close-white', 'id' => 'btn-close-modal'],
 ]);
 echo Html::a('English', ['/site/change-language', 'lang' => 'en-US']);
 echo Html::a('Español', ['/site/change-language', 'lang' => 'es-ES']);

@@ -1,3 +1,4 @@
+$ = jQuery;
 (function () {
     [...document.querySelectorAll(".control")].forEach(button => {
         button.addEventListener("click", function() {
@@ -10,11 +11,10 @@
 
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
+        $("#btn-close-modal").toggleClass('btn-close-white');
     });
 })();
 
-
-$ = jQuery;
 $( window ).on( "load", function() {
     $(".language-btn").on("click", function(e) {
         e.preventDefault();
