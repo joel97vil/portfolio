@@ -20,6 +20,8 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'prDr5hT_6CBpn8Bhl49gcZXU1DU-tqPE',
+            'csrfParam' => '_csrf-backend',
+            'enableCsrfValidation' => true,
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -32,13 +34,18 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => \yii\symfonymailer\Mailer::class,
-            'viewPath' => '@app/mail',
-            // send all mails to a file by default.
-            'useFileTransport' => true,
+            'class' => 'yii\swiftmailer\Mailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'joelfaura.com',
+                'username' => 'info@joelfaura.com',
+                'password' => 'cEqjW&2V9sgKWb',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => YII_ENV_DEV ? 3 : 0,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
@@ -51,8 +58,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'lang/<lang:\w+>' => 'site/change-language',
                 '' => 'site/index',
+                'contact' => 'site/contact',
+                'lang/<lang:\w+(-\w+)?>' => 'site/change-language',
                 '<action>'=>'site/<action>',
             ],
         ],

@@ -4,8 +4,10 @@
 /** @var string $content */
 
 use app\assets\HomeAsset;
+use app\models\ContactForm;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Modal;
+use yii\widgets\ActiveForm;
 
 HomeAsset::register($this);
 
@@ -497,16 +499,26 @@ HomeAsset::register($this);
                     </div>
                 </div>
                 <div class="right-contact">
-                    <form action="/site/contact" class="contact-form" method="post">
+                    <?php $model = new ContactForm(); ?>
+                    <?php $form = ActiveForm::begin([
+                            'action' => ['/contact'], 
+                            'fieldConfig' => ['template' => '{label}{input}'],
+                            'options' => ['method' => 'post', 'class' => 'contact-form', 'enctype' => 'multipart/form-data'],
+                        ]); ?>
+                    <!--<form action="contact" class="contact-form" method="post">-->
                         <div class="input-control i-c-2">
-                            <input type="text" required placeholder="<?= Yii::t('app','Your name'); ?>">
-                            <input type="email" required placeholder="<?= Yii::t('app','Your email'); ?>">
+                            <?= $form->field($model, 'name')->textInput(['placeholder' => Yii::t('app','Your name'), 'required' => true])->label(false); ?>
+                            <!--<input type="text" required placeholder="<?= Yii::t('app','Your name'); ?>">-->
+                            <?= $form->field($model, 'email')->input('email', ['placeholder' => Yii::t('app','Your email'), 'required' => true])->label(false); ?>
+                            <!--<input type="email" required placeholder="<?= Yii::t('app','Your email'); ?>">-->
                         </div>
                         <div class="input-control">
-                            <input type="text" required placeholder="<?= Yii::t('app','Enter subject'); ?>">
+                            <?= $form->field($model, 'subject')->textInput(['placeholder' => Yii::t('app','Enter subject', 'required'), 'required' => true])->label(false); ?>
+                            <!--<input type="text" required placeholder="<?= Yii::t('app','Enter subject', 'required'); ?>">-->
                         </div>
                         <div class="input-control">
-                            <textarea name="" id="" cols="15" rows="8" placeholder="<?= Yii::t('app','Your message here...'); ?>"></textarea>
+                            <?= $form->field($model, 'body')->textarea(['cols' => 15, 'rows' => 8, 'placeholder' => Yii::t('app','Your message here...'), 'required' => true])->label(false); ?>
+                            <!--<textarea name="" id="" cols="15" rows="8" placeholder="<?= Yii::t('app','Your message here...'); ?>"></textarea>-->
                         </div>
                         <div class="submit-btn">
                             <button type="submit" class="main-btn">
@@ -514,7 +526,8 @@ HomeAsset::register($this);
                                 <span class="btn-icon"><i class="fas fa-envelope"></i></span>
                             </button>
                         </div>
-                    </form>
+                    <!--</form>-->
+                    <?php ActiveForm::end(); ?>
                 </div>
             </div>
         </div>

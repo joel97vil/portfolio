@@ -634,6 +634,21 @@ section {
                 width: 100%;
                 color: var(--color-white);
                 resize: none;
+                &::placeholder {
+                    color: var(--color-white);
+                }
+                &::-ms-input-placeholder {
+                    color: var(--color-white);
+                }
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover, 
+                &:-webkit-autofill:focus, 
+                &:-webkit-autofill:active{
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: var(--color-white);
+                    transition: background-color var(--color-grey-5) 5000s ease-in-out 0s;
+                    box-shadow: inset 0 0 90px 90px var(--color-grey-5);
+                }
             }
         }
         .i-c-2 {
@@ -655,6 +670,7 @@ section {
             }
         }
         .main-btn {
+            background-color: var(--color-primary);
             &::before {
                 content: '';
                 position: absolute;

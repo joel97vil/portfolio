@@ -668,6 +668,18 @@ section {
   color: var(--color-white);
   resize: none;
 }
+.contact-content-con .right-contact .input-control input::placeholder, .contact-content-con .right-contact .input-control textarea::placeholder {
+  color: var(--color-white);
+}
+.contact-content-con .right-contact .input-control input::-ms-input-placeholder, .contact-content-con .right-contact .input-control textarea::-ms-input-placeholder {
+  color: var(--color-white);
+}
+.contact-content-con .right-contact .input-control input:-webkit-autofill, .contact-content-con .right-contact .input-control input:-webkit-autofill:hover, .contact-content-con .right-contact .input-control input:-webkit-autofill:focus, .contact-content-con .right-contact .input-control input:-webkit-autofill:active, .contact-content-con .right-contact .input-control textarea:-webkit-autofill, .contact-content-con .right-contact .input-control textarea:-webkit-autofill:hover, .contact-content-con .right-contact .input-control textarea:-webkit-autofill:focus, .contact-content-con .right-contact .input-control textarea:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--color-white);
+  transition: background-color var(--color-grey-5) 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 90px 90px var(--color-grey-5);
+}
 .contact-content-con .right-contact .i-c-2 {
   display: flex;
 }
@@ -684,6 +696,9 @@ section {
 }
 .contact-content-con .right-contact .submit-btn:hover {
   color: var(--color-inner-button-hover);
+}
+.contact-content-con .right-contact .main-btn {
+  background-color: var(--color-primary);
 }
 .contact-content-con .right-contact .main-btn::before {
   content: "";

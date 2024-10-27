@@ -38,11 +38,25 @@ class SiteController extends Controller
         ];
     }
 
+    public function init()
+    {
+        parent::init();
+
+        // Check if a language is set in the session or cookies, and apply it
+        if ($lang = Yii::$app->session->get('language')) {
+            Yii::$app->language = $lang;
+        } elseif ($lang = Yii::$app->request->cookies->getValue('language')) {
+            Yii::$app->language = $lang;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
     public function actions()
     {
+        // Yii::$app->session->setFlash(Yii::t('app','Something went wrong, try again later'));
+        // return $this->render('landing');
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -70,6 +84,7 @@ class SiteController extends Controller
      * @return string
      */
     public function actionHome(){
+        //TODO: Canviar enllaç a portfolio
         return $this->render('home');
     }
 
@@ -81,16 +96,30 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->mailer->compose()
-                    ->setFrom('admin@joelfaura.com')
+        if ($model->load(Yii::$app->request->post()) /*&& $model->contact(Yii::$app->params['adminEmail'])*/) {
+            try
+            {
+                Yii::$app->mailer->compose()
+                    ->setFrom('info@joelfaura.com')
                     ->setTo('joelfauram@gmail.com')
                     ->setSubject('Portfolio message | ' . $model->subject)
                     ->setHtmlBody(Html::encode($model->body))
                     ->send();
-            Yii::$app->session->setFlash(Yii::t('app','Contact form successfully submitted'));
+                Yii::$app->session->setFlash(Yii::t('app','Contact form successfully submitted'));
+            }
+            catch(Exception $ex)
+            {
+                var_dump($ex->getMessage()); die();
+                Yii::$app->session->setFlash(Yii::t('app','Something went wrong, try again later'));
+                //if (YII_ENV_DEV) { var_dump($ex->getMessage()); die(); }
+            }
+            finally
+            {
+                return $this->render('home');
+            }
+        }
+        else{
 
-            return $this->refresh();
         }
     }
 
@@ -99,14 +128,20 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionChangeLanguage()
+    public function actionChangeLanguage($lang)
     {
-        if(Yii::$app->request->get('lang') != null)
-        {
-            $language = Yii::$app->request->get('lang');
-            Yii::$app->language = $language;
-        }
+        //Set application language
+        Yii::$app->language = $lang;
+        Yii::$app->session->set('language', $lang);
 
-        return $this->render('home');
+        //Store language in a cookie
+        Yii::$app->response->cookies->add(new \yii\web\Cookie([
+            'name' => 'language',
+            'value' => $lang,
+            'expire' => time() + 365 * 24 * 60 * 60, // Expires in 1 year
+        ]));
+
+        //return $this->render('home');
+        return $this->redirect('/home');
     }
 }
