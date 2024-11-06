@@ -16,6 +16,13 @@ HomeAsset::register($this);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<noscript><?= Yii::t('app','This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.'); ?></noscript>
+
+<?php
+    foreach (Yii::$app->session->getAllFlashes() as $type => $message) {
+        echo "<div class='alert alert-{$type} flash-message' role='alert'>".Html::encode($message)."</div>";
+    }
+?>
 
 <header class="container header active" id="home">
     <div class="header-content">
@@ -27,14 +34,14 @@ HomeAsset::register($this);
         </div>
         <div class="right-header">
             <h1 class="name">
-                <?= Yii::t("app", "Hello there, I'm"); ?> <span>Joel Faura Micó.</span>
-                <?= Yii::t("app", "A FullStack Developer."); ?>
+                <?= Yii::t("app", "Hello there, I'm"); ?> <span>Joel Faura Micó, </span>
+                <?= Yii::t("app", "a FullStack Developer"); ?>
             </h1>
             <p>
-                <?= Yii::t("app", "I'm a FullStack App and Web Developer, I love to create beautiful and functional solutions."); ?>
-                <?= Yii::t("app", "Fullstack developer with more than four years of experience in the sector being part in various projects in a small development team.");?>
-                <?= Yii::t("app", "Knowledgeable and collaborator in most project phases: analysis, functional requirements, documentations, task organization, development, testing, version control, steps to production, integrations and customer training.");?>
-                <?= Yii::t("app", "Interested in cybersecurity, new development technologies and ensuring good user experience.");?>
+                <?= Yii::t("app", "With over five years of experience delivering beautiful, functional solutions."); ?>
+                <?= Yii::t("app", "I've been part of various projects within small development teams, contributing across all phases—from analyzing requirements and organizing tasks to hands-on development, testing, version control, and seamless production deployments.");?>
+                <?= Yii::t("app", "I’m passionate about cybersecurity, exploring new development technologies, and ensuring an exceptional user experience.");?>
+                <?= Yii::t("app", " I also enjoy collaborating with clients, providing thorough documentation, integration support, and training to help them succeed with their digital products.");?>
             </p>
             <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
         </div>
@@ -49,11 +56,11 @@ HomeAsset::register($this);
             <div class="left-about">
                 <h4><?= Yii::t('app','Information about me');?></h4>
                 <p>
-                    <?= Yii::t('app',"I've been developer since I was 11 years old, but I didn't knew that"); ?>
-                    <?= Yii::t('app',"I started programming at 11 because I was a big fan of RuneScape, a MMO-RPG. I wanted to investigate how the game could be built. And I starting my research of how to do it I found the RuneScape private servers world, which is a RS replica with Java Code..."); ?>
-                    <?= Yii::t("app", "Fullstack developer with more than four years of experience in the sector being part in various projects in a small development team.");?>
-                    <?= Yii::t("app", "Knowledgeable and collaborator in most project phases: analysis, functional requirements, documentations, task organization, development, testing, version control, steps to production, integrations and customer training.");?>
-                    <?= Yii::t("app", "Interested in cybersecurity, new development technologies and ensuring good user experience.");?>
+                    <?= Yii::t('app', "My journey in programming began when I was 11, sparked by my fascination with the MMO-RPG RuneScape."); ?>
+                    <?= Yii::t('app', "Curious about how such a game could be built, I discovered the world of RuneScape private servers—a Java-based replica environment that fueled my early learning."); ?>
+                    <?= Yii::t("app", "Now, as a FullStack developer with over four years of professional experience, I’ve contributed to a variety of projects within small development teams.");?>
+                    <?= Yii::t("app", "I'm skilled across all project phases, including requirements analysis, documentation, task organization, development, testing, version control, production deployment, integration, and client training.");?>
+                    <?= Yii::t("app", "My interests also extend to cybersecurity, emerging technologies, and optimizing user experience, and I’m driven by the opportunity to build impactful, seamless solutions.");?>
                 </p>
                 <?= Yii::$app->view->renderFile('@app/views/components/_download_button_default.php'); ?>
             </div>
@@ -313,7 +320,7 @@ HomeAsset::register($this);
             <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','personal projects');?></span><span class="bg-text"><?= Yii::t('app','Projects');?></span></h2>
         </div>
         <p class="port-text">
-        <?= Yii::t('app',"Here is some of my work that I've done in various programming languages.");?>
+        <?= Yii::t('app',"Here are some projects I've developed across different programming languages, highlighting a range of skills and solutions.");?>
         </p>
         <div class="portfolios">
             <div class="portfolio-item">
@@ -444,7 +451,7 @@ HomeAsset::register($this);
                 <div class="left-contact">
                     <h4><?= Yii::t('app','Contact me here');?></h4>
                     <p>
-                        <?= Yii::t('app', "Do you want to collaborate with me with any project, do you want more info about a project, or about me? Then you can contact me using the following channels, or by sending me a message through this web."); ?>
+                        <?= Yii::t('app', "Interested in collaborating on a project, learning more about my work, or just connecting? Feel free to reach out through any of the channels below, or simply send me a message directly from this website. I look forward to hearing from you!"); ?>
                     </p>
                     <div class="contact-info">
                         <div class="contact-item">
@@ -502,10 +509,9 @@ HomeAsset::register($this);
                     <?php $model = new ContactForm(); ?>
                     <?php $form = ActiveForm::begin([
                             'action' => ['/contact'], 
-                            'fieldConfig' => ['template' => '{label}{input}'],
-                            'options' => ['method' => 'post', 'class' => 'contact-form', 'enctype' => 'multipart/form-data'],
+                            //'fieldConfig' => ['template' => '{label}{input}'],
+                            'options' => ['method' => 'post', 'class' => 'contact-form', 'enctype' => 'multipart/form-data', 'id' => 'contact-form'],
                         ]); ?>
-                    <!--<form action="contact" class="contact-form" method="post">-->
                         <div class="input-control i-c-2">
                             <?= $form->field($model, 'name')->textInput(['placeholder' => Yii::t('app','Your name'), 'required' => true])->label(false); ?>
                             <!--<input type="text" required placeholder="<?= Yii::t('app','Your name'); ?>">-->
@@ -514,19 +520,16 @@ HomeAsset::register($this);
                         </div>
                         <div class="input-control">
                             <?= $form->field($model, 'subject')->textInput(['placeholder' => Yii::t('app','Enter subject', 'required'), 'required' => true])->label(false); ?>
-                            <!--<input type="text" required placeholder="<?= Yii::t('app','Enter subject', 'required'); ?>">-->
                         </div>
                         <div class="input-control">
                             <?= $form->field($model, 'body')->textarea(['cols' => 15, 'rows' => 8, 'placeholder' => Yii::t('app','Your message here...'), 'required' => true])->label(false); ?>
-                            <!--<textarea name="" id="" cols="15" rows="8" placeholder="<?= Yii::t('app','Your message here...'); ?>"></textarea>-->
                         </div>
                         <div class="submit-btn">
-                            <button type="submit" class="main-btn">
+                            <a href="#" class="main-btn" id="submit-form">
                                 <span class="btn-text"><?= Yii::t('app','Send'); ?></span>
                                 <span class="btn-icon"><i class="fas fa-envelope"></i></span>
-                            </button>
+                            </a>
                         </div>
-                    <!--</form>-->
                     <?php ActiveForm::end(); ?>
                 </div>
             </div>
@@ -537,28 +540,35 @@ HomeAsset::register($this);
 <div class="controls">
     <div class="control active-btn" data-id="home" >
         <i class="fas fa-home"></i>
+        <!--<span class="text-bottom"><?= Yii::t('app','Home'); ?></span>-->
     </div>
     <div class="control" data-id="about" alt="<?= Yii::t('app','About') ?>">
         <i class="fas fa-user"></i>
+        <!--<span class="text-bottom"><?= Yii::t('app','About me'); ?> </span>-->
     </div>
     <div class="control" data-id="skills" alt="<?= Yii::t('app','Skills') ?>">
         <i class="fas fa-code"></i>
+        <!--<span class="text-bottom"><?= Yii::t('app','Skills'); ?> </span>-->
     </div>
     <div class="control" data-id="portfolio">
         <i class="fas fa-file"></i>
+        <!--<span class="text-bottom"><?= Yii::t('app','Portfolio'); ?> </span>-->
     </div>
     <!--<div class="control" data-id="blogs">
         <i class="far fa-newspaper"></i>
     </div>-->
     <div class="control" data-id="contact">
         <i class="fas fa-envelope-open"></i>
+        <!--<span class="text-bottom"><?= Yii::t('app','Contact'); ?> </span>-->
     </div>
 </div>
 <div class="theme-btn">
     <i class="fas fa-paint-brush"></i>
+    <!--<span class="text-bottom"><?= Yii::t('app','Theme'); ?> </span>-->
 </div>
 <div class="language-btn">
     <i class="fas fa-language"></i>
+    <!--<span class="text-bottom"><?= Yii::t('app','Language'); ?> </span>-->
 </div>
 
 <?php

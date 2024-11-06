@@ -24,9 +24,25 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [
+                ['name', 'email', 'subject', 'body'], 
+                'required',
+                'message' => "{attribute} " . Yii::t('app','is required')
+            ],
             // email has to be a valid email address
-            ['email', 'email'],
+            [
+                'email',
+                'email',
+                'message' => "{attribute} " . Yii::t('app', 'must have a correct Email format')
+            ],
+            //Text lengths
+            [
+                ['name', 'subject'],
+                'string',
+                'max' => 50,
+                'min' => 5,
+                'message' => "{attribute} " . Yii::t('app', 'must have between 5 and 50 characters')
+            ],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];
@@ -39,6 +55,9 @@ class ContactForm extends Model
     {
         return [
             'verifyCode' => 'Verification Code',
+            'name' => Yii::t('app', 'Name'),
+            'subject' => Yii::t('app', 'Subject'),
+            'message' => Yii::t('app', 'Message'),
         ];
     }
 

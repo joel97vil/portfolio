@@ -21,6 +21,7 @@
   --color-inner-button-text:#FFFFFF;
   --color-inner-button-icon:#FFFFFF;
   --color-inner-button-hover:#FFFFFF;
+  --color-error-form: #ff7070;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
 }
@@ -41,6 +42,7 @@
   --color-inner-button-text:#454e56;
   --color-inner-button-icon:#f8f8f8;
   --color-inner-button-hover:#f8f8f8;
+  --color-error-form: #ad0000;
 }
 
 body {
@@ -123,6 +125,15 @@ section {
   font-size: 1.2rem;
   color: var(--color-inner-button-icon);
   pointer-events: none;
+}
+.controls .control span {
+  bottom: 1px;
+  width: 100%;
+  text-align: center;
+  color: var(--color-inner-button-text);
+  font-size: 0.7rem;
+  border-radius: 20px;
+  -webkit-text-stroke: 1px;
 }
 .controls .control:hover {
   background-color: var(--color-terciary);
@@ -697,28 +708,9 @@ section {
 .contact-content-con .right-contact .submit-btn:hover {
   color: var(--color-inner-button-hover);
 }
-.contact-content-con .right-contact .main-btn {
-  background-color: var(--color-primary);
-}
-.contact-content-con .right-contact .main-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
-  transition: all 0.4s ease-out;
-  z-index: -1;
-}
-.contact-content-con .right-contact .main-btn:hover {
-  transition: all 0.4s ease-out;
-  color: var(--color-inner-button-hover);
-}
-.contact-content-con .right-contact .main-btn:hover::before {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-secondary);
-  transform: translateX(0);
-  transition: all 0.4s ease-out;
+
+.form-group .help-block {
+  color: var(--color-error-form);
 }
 
 /*Independed components*/
@@ -799,6 +791,17 @@ section {
   transform: translate(-50%, -50%);
   font-weight: 800;
   font-size: 6.3rem;
+}
+
+.flash-message {
+  position: fixed;
+  top: 2rem; /* Distance from the top of the screen */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999; /* Ensures it stays on top of other content */
+  max-width: 80%;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content {

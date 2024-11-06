@@ -26,4 +26,14 @@ $( window ).on( "load", function() {
         $("#blog-modal").modal('show');
         //TODO: Ajax call to render clicked blog content
     });
+
+    $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        $('#contact-form').submit();
+    });
+
 });
+
+setTimeout(function() {
+    $('.alert').fadeOut('slow');
+}, 8000); // 8 seconds

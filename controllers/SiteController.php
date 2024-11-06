@@ -79,12 +79,12 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays home.
+     * Displays portfolio.
      *
      * @return string
      */
-    public function actionHome(){
-        //TODO: Canviar enllaç a portfolio
+    public function actionPortfolio()
+    {
         return $this->render('home');
     }
 
@@ -100,22 +100,22 @@ class SiteController extends Controller
             try
             {
                 Yii::$app->mailer->compose()
-                    ->setFrom('info@joelfaura.com')
-                    ->setTo('joelfauram@gmail.com')
-                    ->setSubject('Portfolio message | ' . $model->subject)
+                    ->setFrom(Html::encode($model->email))
+                    ->setTo(Yii::$app->params['adminEmail'])
+                    ->setSubject('Portfolio message | ' . Html::encode($model->subject))
                     ->setHtmlBody(Html::encode($model->body))
                     ->send();
-                Yii::$app->session->setFlash(Yii::t('app','Contact form successfully submitted'));
+                Yii::$app->session->setFlash('success', Yii::t('app','Contact form successfully submitted'));
             }
             catch(Exception $ex)
             {
-                var_dump($ex->getMessage()); die();
-                Yii::$app->session->setFlash(Yii::t('app','Something went wrong, try again later'));
-                //if (YII_ENV_DEV) { var_dump($ex->getMessage()); die(); }
+                //var_dump($ex->getMessage()); die();
+                Yii::$app->session->setFlash('error', Yii::t('app','Something went wrong, try again later'));
+                if (YII_ENV_DEV) { var_dump($ex->getMessage()); die(); }
             }
             finally
             {
-                return $this->render('home');
+                return $this->redirect('/portfolio');
             }
         }
         else{
@@ -141,7 +141,21 @@ class SiteController extends Controller
             'expire' => time() + 365 * 24 * 60 * 60, // Expires in 1 year
         ]));
 
-        //return $this->render('home');
-        return $this->redirect('/home');
+        return $this->redirect('/portfolio');
+    }
+
+    public function actionDownload()
+    {
+        //Get filename and filepath
+        $lang = Yii::$app->session->get('language', Yii::$app->language);
+        $filePath = Yii::getAlias('@app/web/files') . "/JOEL_FAURA_v1_{$lang}.pdf";
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            throw new \yii\web\NotFoundHttpException(Yii::t('app','Something went wrong on the file download, please try again later.'));
+        }
+
+        // Send the file as a download response
+        return Yii::$app->response->sendFile($filePath, "file_{$lang}.pdf");
     }
 }
