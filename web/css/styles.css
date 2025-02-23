@@ -118,13 +118,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
+  flex-direction: column;
 }
 .controls .control i {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-inner-button-icon);
   pointer-events: none;
+  margin-bottom: 0.2rem;
 }
 .controls .control span {
   bottom: 1px;
@@ -132,8 +135,11 @@ section {
   text-align: center;
   color: var(--color-inner-button-text);
   font-size: 0.7rem;
-  border-radius: 20px;
-  -webkit-text-stroke: 1px;
+  display: inline-block;
+  text-align: center;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg) translateY(3px);
 }
 .controls .control:hover {
   background-color: var(--color-terciary);

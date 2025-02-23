@@ -387,61 +387,8 @@ HomeAsset::register($this);
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/layout/port5.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>JS Loading Spinner</h3>
-                    <div class="icons">
-                        <a href="https://github.com/joel97vil/html-loading-spinner" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fa fa-play"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-    <!--<section class="container" id="blogs">
-        <div class="blogs-content">
-            <div class="main-title">
-                <h2><?= Yii::t('app','My');?> <span><?= Yii::t('app','Blogs');?></span><span class="bg-text"><?= Yii::t('app','Blogs');?></span></h2>
-            </div>
-            <div class="blogs">
-                <?php
-                    // $blogs = app\models\Blog::getLastest();
-                    // foreach($blogs as $blog) {
-                    //     if($blog != null){
-                ?>
-                    <div class="blog" data-id="<?php // echo $blog->id; ?>">
-                        <?php
-                            // if($blog->bannerImage != null)
-                            // {
-                            //     echo Html::img([Html::encode($blog->bannerImage->fullUrl), ['alt' => Html::encode($blog->bannerImage->alt)]]);
-                            // }
-                            // else{
-                            //     echo Html::img(["@blog/port6.jpg", ['alt' => Html::encode($blog->title)]]);
-                            // }
-                        ?>
-                        <div class="blog-text">
-                            <h4>
-                                <?php // echo Html::encode($blog->title); ?>
-                            </h4>
-                            <p>
-                                <?php // echo Html::encode($blog->bodyPreview) ?>
-                            </p>
-                        </div>
-                    </div>
-                <?php
-                    //     }
-                    // }
-                ?>
-            </div>
-        </div>
-    </section>-->
     <section class="container contact" id="contact">
         <div class="contact-container">
             <div class="main-title">
@@ -514,12 +461,10 @@ HomeAsset::register($this);
                         ]); ?>
                         <div class="input-control i-c-2">
                             <?= $form->field($model, 'name')->textInput(['placeholder' => Yii::t('app','Your name'), 'required' => true])->label(false); ?>
-                            <!--<input type="text" required placeholder="<?= Yii::t('app','Your name'); ?>">-->
                             <?= $form->field($model, 'email')->input('email', ['placeholder' => Yii::t('app','Your email'), 'required' => true])->label(false); ?>
-                            <!--<input type="email" required placeholder="<?= Yii::t('app','Your email'); ?>">-->
                         </div>
                         <div class="input-control">
-                            <?= $form->field($model, 'subject')->textInput(['placeholder' => Yii::t('app','Enter subject', 'required'), 'required' => true])->label(false); ?>
+                            <?= $form->field($model, 'subject')->textInput(['placeholder' => Yii::t('app','Enter subject'), 'required' => true])->label(false); ?>
                         </div>
                         <div class="input-control">
                             <?= $form->field($model, 'body')->textarea(['cols' => 15, 'rows' => 8, 'placeholder' => Yii::t('app','Your message here...'), 'required' => true])->label(false); ?>
@@ -554,9 +499,6 @@ HomeAsset::register($this);
         <i class="fas fa-file"></i>
         <!--<span class="text-bottom"><?= Yii::t('app','Portfolio'); ?> </span>-->
     </div>
-    <!--<div class="control" data-id="blogs">
-        <i class="far fa-newspaper"></i>
-    </div>-->
     <div class="control" data-id="contact">
         <i class="fas fa-envelope-open"></i>
         <!--<span class="text-bottom"><?= Yii::t('app','Contact'); ?> </span>-->
@@ -582,15 +524,5 @@ Modal::begin([
 echo Html::a('English', ['/site/change-language', 'lang' => 'en-US']);
 echo Html::a('Español', ['/site/change-language', 'lang' => 'es-ES']);
 echo Html::a('Català', ['/site/change-language', 'lang' => 'ca-ES']);
-Modal::end();
-
-
-Modal::begin([
-    //'title' => '',
-    'id' => 'blog-modal',
-    'size' => 'modal-lg',
-    'centerVertical' => true
-]);
-//BLOG CONTENT GOES HERE!
 Modal::end();
 ?>
