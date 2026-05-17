@@ -8,6 +8,7 @@ use app\models\ContactForm;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Modal;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 HomeAsset::register($this);
 
@@ -330,10 +331,10 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>Where do I sleep? (WDIS)</h3>
                     <div class="icons">
-                        <a href="https://github.com/joel97vil/wdis" class="icon">
+                        <a href="https://github.com/joel97vil/wdis" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="icon">
+                        <a href="#" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
@@ -346,10 +347,10 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3><?= Yii::t('app','Portfolio (this website)');?></h3>
                     <div class="icons">
-                        <a href="https://github.com/joel97vil/portfolio" class="icon">
+                        <a href="https://github.com/joel97vil/portfolio" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="icon">
+                        <a href="#" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
@@ -362,10 +363,10 @@ HomeAsset::register($this);
                 <div class="hover-items">
                     <h3>Elvarg</h3>
                     <div class="icons">
-                        <a href="https://github.com/joel97vil/Elvarg" class="icon">
+                        <a href="https://github.com/joel97vil/Elvarg" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="icon">
+                        <a href="#" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
@@ -373,15 +374,15 @@ HomeAsset::register($this);
             </div>
             <div class="portfolio-item">
                 <div class="image">
-                    <img src="img/layout/port4.jpg" alt="">
+                    <img src="img/layout/workshop-manual.jpg" alt="">
                 </div>
                 <div class="hover-items">
-                    <h3>XAMPP Web Initializer</h3>
+                    <h3><?= Yii::t('app','Civic 8 workshop manual'); ?></h3>
                     <div class="icons">
-                        <a href="https://github.com/joel97vil/xampp-web-initializer" class="icon">
+                        <a href="https://github.com/joel97vil/civic-8-worshop-manual" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="icon">
+                        <a href="<?= 'civic8manual.joelfaura.com' ?>" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
