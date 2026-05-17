@@ -382,7 +382,7 @@ HomeAsset::register($this);
                         <a href="https://github.com/joel97vil/civic-8-worshop-manual" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="<?= 'civic8manual.joelfaura.com' ?>" class="icon" target="_blank">
+                        <a href="<?= 'https://civic8manual.joelfaura.com' ?>" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
