@@ -40,3 +40,7 @@ tests/_support/_generated
 
 # Any photoshop project file
 *.psd
+
+# Claude Code
+CLAUDE.md
+.claude/
