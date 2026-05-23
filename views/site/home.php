@@ -7,8 +7,7 @@ use app\assets\HomeAsset;
 use app\models\ContactForm;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Modal;
-use yii\widgets\ActiveForm;
-use yii\helpers\Url;
+use yii\bootstrap5\ActiveForm;
 
 HomeAsset::register($this);
 
@@ -382,7 +381,7 @@ HomeAsset::register($this);
                         <a href="https://github.com/joel97vil/civic-8-worshop-manual" class="icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="<?= 'https://civic8manual.joelfaura.com' ?>" class="icon" target="_blank">
+                        <a href="https://civic8manual.joelfaura.com" class="icon" target="_blank">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
@@ -484,41 +483,41 @@ HomeAsset::register($this);
 </main>
 
 <div class="controls">
-    <div class="control active-btn" data-id="home" >
+    <div class="control active-btn" data-id="home">
         <i class="fas fa-home"></i>
-        <!--<span class="text-bottom"><?= Yii::t('app','Home'); ?></span>-->
+        <span class="control-tooltip"><?= Yii::t('app','Home'); ?></span>
     </div>
-    <div class="control" data-id="about" alt="<?= Yii::t('app','About') ?>">
+    <div class="control" data-id="about">
         <i class="fas fa-user"></i>
-        <!--<span class="text-bottom"><?= Yii::t('app','About me'); ?> </span>-->
+        <span class="control-tooltip"><?= Yii::t('app','About me'); ?></span>
     </div>
-    <div class="control" data-id="skills" alt="<?= Yii::t('app','Skills') ?>">
+    <div class="control" data-id="skills">
         <i class="fas fa-code"></i>
-        <!--<span class="text-bottom"><?= Yii::t('app','Skills'); ?> </span>-->
+        <span class="control-tooltip"><?= Yii::t('app','Skills'); ?></span>
     </div>
     <div class="control" data-id="portfolio">
         <i class="fas fa-file"></i>
-        <!--<span class="text-bottom"><?= Yii::t('app','Portfolio'); ?> </span>-->
+        <span class="control-tooltip"><?= Yii::t('app','Portfolio'); ?></span>
     </div>
     <div class="control" data-id="contact">
         <i class="fas fa-envelope-open"></i>
-        <!--<span class="text-bottom"><?= Yii::t('app','Contact'); ?> </span>-->
+        <span class="control-tooltip"><?= Yii::t('app','Contact'); ?></span>
     </div>
 </div>
 <div class="theme-btn">
     <i class="fas fa-paint-brush"></i>
-    <!--<span class="text-bottom"><?= Yii::t('app','Theme'); ?> </span>-->
+    <span class="control-tooltip"><?= Yii::t('app','Theme'); ?> </span>
 </div>
 <div class="language-btn">
     <i class="fas fa-language"></i>
-    <!--<span class="text-bottom"><?= Yii::t('app','Language'); ?> </span>-->
+    <span class="control-tooltip"><?= Yii::t('app','Language'); ?> </span>
 </div>
 
 <?php
 Modal::begin([
     'title' => '<i class="fas fa-language"></i> ' . Yii::t('app', 'Language'),
     'id' => 'languages-modal',
-    'size' => 'modal-sm',
+    'size' => Modal::SIZE_SMALL,
     'centerVertical' => true,
     'closeButton' => ['class' => 'btn-close btn-close-white', 'id' => 'btn-close-modal'],
 ]);

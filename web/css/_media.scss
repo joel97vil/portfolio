@@ -33,6 +33,10 @@
             font-size: 2.5rem !important;
             text-align: center;
             padding-top: 3rem;
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
     }
     .header-content .left-header .image{
@@ -52,6 +56,9 @@
         .control{
             margin: 1rem .3rem;
         }
+    }
+    .control-tooltip {
+        display: none !important;
     }
 
     .about-container{
@@ -254,6 +261,10 @@
             font-size: 2.5rem !important;
             text-align: center;
             padding-top: 3rem;
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
     }
 }

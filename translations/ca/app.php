@@ -1,7 +1,7 @@
 <?php return [
     'This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.' => 'Aquest lloc web requereix JavaScript per funcionar correctament. Si us plau, habilita JavaScript a la configuració del teu navegador.',
     "Hello there, I'm" => 'Hola, sóc',
-    "a FullStack Developer" => 'un Desenvolupador FullStack',
+    "a FullStack Developer" => 'un Desenvolu&shy;pador FullStack',
     "With over five years of experience delivering beautiful, functional solutions." => 'Amb més de cinc anys d\'experiència oferint solucions belles i funcionals.',
     "I've been part of various projects within small development teams, contributing across all phases—from analyzing requirements and organizing tasks to hands-on development, testing, version control, and seamless production deployments." => 'He format part de diversos projectes dins de petits equips de desenvolupament, contribuint en totes les fases: des de l\'anàlisi de requisits i l\'organització de tasques fins al desenvolupament pràctic, proves, control de versions i desplegaments de producció sense problemes.',
     "I’m passionate about cybersecurity, exploring new development technologies, and ensuring an exceptional user experience." => 'Em apassiona la ciberseguretat, explorar noves tecnologies de desenvolupament i assegurar una experiència d\'usuari excepcional.',
