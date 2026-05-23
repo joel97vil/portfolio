@@ -19,9 +19,10 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'prDr5hT_6CBpn8Bhl49gcZXU1DU-tqPE',
+            'cookieValidationKey' => $_ENV['COOKIE_VALIDATION_KEY'],
             'csrfParam' => '_csrf-backend',
             'enableCsrfValidation' => true,
+            'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -39,7 +40,7 @@ $config = [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'joelfaura.com',
                 'username' => 'info@joelfaura.com',
-                'password' => 'cEqjW&2V9sgKWb',
+                'password' => $_ENV['SMTP_PASSWORD'],
                 'port' => '587',
                 'encryption' => 'tls',
             ],
