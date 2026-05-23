@@ -29,7 +29,7 @@ $(window).on("load", function() {
 
 //Portfolio redirection
 function redirect(){
-    window.location.href = "/portfolio";
+    window.location.href = typeof portfolioUrl !== 'undefined' ? portfolioUrl : '/portfolio';
 }
 
 //Update count logic
