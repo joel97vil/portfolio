@@ -44,3 +44,6 @@ tests/_support/_generated
 # Claude Code
 CLAUDE.md
 .claude/
+
+# Configs
+config/web.php
