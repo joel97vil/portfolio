@@ -10,8 +10,8 @@ use yii\helpers\Json;
 use yii\helpers\Url;
 
 LandingAsset::register($this);
-$this->title = "Joel Faura M. | Portfolio";
-$this->registerJs('var portfolioUrl = ' . Json::encode(Url::to(['/site/home'])) . ';', \yii\web\View::POS_HEAD);
+$this->title = Yii::$app->params['title'];
+$this->registerJs('var portfolioUrl = ' . Json::encode(Url::to(['/site/portfolio'])) . ';', \yii\web\View::POS_HEAD);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');

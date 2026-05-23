@@ -6,4 +6,5 @@ return [
     'senderName' => 'Joel Faura M.',
     'jsVersion' => '2',
     'filesdir' => 'files',
+    'title' => 'Joel Faura M. | Portfolio',
 ];
