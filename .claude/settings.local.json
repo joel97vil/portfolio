@@ -4,5 +4,6 @@
       "PowerShell(php -v)",
       "Bash(composer require *)"
     ]
-  }
+  },
+  "outputStyle": "Concise"
 }
