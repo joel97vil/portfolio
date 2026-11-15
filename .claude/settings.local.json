@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(php -v)"
+      "PowerShell(php -v)",
+      "Bash(composer require *)"
     ]
   }
 }

@@ -1,6 +1,12 @@
 Options +FollowSymlinks
 RewriteEngine On
 
+# Deny direct access to anything outside web/ (source, config, vendor, .env, composer.*, etc.)
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [F,L]
+
 # Forward requests for files/dirs that exist under web/
 RewriteCond %{REQUEST_URI} !^/web/
 RewriteCond %{DOCUMENT_ROOT}/web%{REQUEST_URI} -f [OR]
