@@ -96,7 +96,8 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) /*&& $model->contact(Yii::$app->params['adminEmail'])*/) {
+        $isPosted = $model->load(Yii::$app->request->post());
+        if ($isPosted && $model->validate()) {
             try
             {
                 Yii::$app->mailer->compose()
@@ -117,9 +118,9 @@ class SiteController extends Controller
             {
                 return $this->redirect('/portfolio');
             }
-        }
-        else{
-
+        } elseif ($isPosted) {
+            Yii::$app->session->setFlash('error', Yii::t('app', 'Something went wrong, try again later'));
+            return $this->redirect('/portfolio');
         }
     }
 

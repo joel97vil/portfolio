@@ -8,6 +8,7 @@ use app\models\ContactForm;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Modal;
 use yii\bootstrap5\ActiveForm;
+use yii\captcha\Captcha;
 
 HomeAsset::register($this);
 
@@ -468,6 +469,12 @@ HomeAsset::register($this);
                         </div>
                         <div class="input-control">
                             <?= $form->field($model, 'body')->textarea(['cols' => 15, 'rows' => 8, 'placeholder' => Yii::t('app','Your message here...'), 'required' => true])->label(false); ?>
+                        </div>
+                        <div class="input-control">
+                            <?= $form->field($model, 'verifyCode')->widget(Captcha::class, [
+                                'template' => '{image}{input}',
+                                'options' => ['placeholder' => Yii::t('app', 'Verification code'), 'required' => true],
+                            ])->label(false); ?>
                         </div>
                         <div class="submit-btn">
                             <a href="#" class="main-btn" id="submit-form">
