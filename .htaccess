@@ -5,7 +5,7 @@ RewriteEngine On
 # Excludes the site root itself: REQUEST_FILENAME for "/" resolves to DOCUMENT_ROOT,
 # which is itself a directory (-d true), so without this it blocks the homepage too.
 RewriteCond %{REQUEST_URI} !^/web/
-RewriteCond %{REQUEST_FILENAME} !^%{DOCUMENT_ROOT}/?$
+RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [F,L]
